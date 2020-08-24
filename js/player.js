@@ -20,7 +20,7 @@ class Player{
         });
     }
     update(){
-        var playerIndex="players/player"+playerCount;
+        var playerIndex="players/player"+this.index;
         database.ref(playerIndex).set({
             name:this.name,
             distance:this.distance
@@ -28,5 +28,10 @@ class Player{
         });
     }
     
-
+    static getPlayerInfo(){
+        var playerInforef=database.ref('players');
+        playerInforef.on("value",(data)=>{
+            allPlayers=data.val();
+        });
+    }
 }

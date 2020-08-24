@@ -4,6 +4,11 @@ class Form{
         this.button=createButton("play");
         this.greeting=createElement('h3');
     }
+    hide(){
+        this.greeting.hide();
+        this.button.hide();
+        this.input.hide();
+    }
     display(){
         var title= createElement ('h2');
         title.html("Car Racing");
@@ -14,6 +19,7 @@ class Form{
           this.input.hide();
             this.button.hide();
             player.name=this.input.value();
+            player.index=playerCount;
             playerCount+=1;
             player.update();
             player.updateCount(playerCount);
@@ -21,5 +27,6 @@ class Form{
             this.greeting.position(130,160);
 
         });
+
     }
 }
