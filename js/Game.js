@@ -75,6 +75,11 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
+          stroke(10);
+          fill("white");
+          ellipse(x,y,120,150);
+          cars[index-1].shapeColor="white";
+          console.log("ellipse");
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
